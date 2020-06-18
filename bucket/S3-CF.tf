@@ -22,6 +22,9 @@ resource "aws_s3_bucket" "task1-bucket-bs" {
    tags = {
     Name = "task1-bucket-bs"
   }
+  lifecycle {
+            prevent_destroy = true
+        }
 }
 locals {
   s3_origin_id = "myS3Origin"
