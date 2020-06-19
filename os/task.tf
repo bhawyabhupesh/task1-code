@@ -150,14 +150,6 @@ provisioner "remote-exec" {
   }
 }
 
-resource "null_resource" "nulllocal2"  {
- 
-  
-	provisioner "local-exec" {
-	    command = "git clone https://github.com/bhawyabhupesh/web.git"
-  	}
-}
-
 
 // for s3 bucket object
 resource "aws_s3_bucket_object" "object" {
@@ -165,10 +157,6 @@ resource "aws_s3_bucket_object" "object" {
     null_resource.nulllocal1
   ]
   bucket = "task1-bucket-bs"
-  
-	provisioner "local-exec" {
-	    command = "cd /web/"
-  	}
   key    = "singh.jpg"
   source = "/var/lib/jenkins/workspace/job2/singh.jpg"
 }
