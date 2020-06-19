@@ -170,7 +170,7 @@ resource "aws_s3_bucket_object" "object" {
 	    command = "cd /web/"
   	}
   key    = "singh.jpg"
-  source = "singh.jpg"
+  source = "/var/lib/jenkins/workspace/job2/singh.jpg"
 }
 
 // ebs snapshot
